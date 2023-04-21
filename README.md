@@ -1,6 +1,6 @@
 # Emojify-Create-own-emoji-using-Python
 
-Predicting human face expressions using CNN python
+Predicting human face expressions ["Angry","Disgusted","Fearful", "Happy", "Neutral", "Sad", "Surprised"] using CNN python 
 
 Mapping the predicted emotions to avatar or emoji
 
