@@ -4,9 +4,8 @@ Model Deployment using Tkinter Python
 
 '''
 import cv2                               # using opencv library to read inputs from webcam
-import numpy as np
-# creating GUI widgets using tkinter library in python
-import tkinter as tk
+import numpy as np                                       
+import tkinter as tk                     # creating GUI widgets using tkinter library in python
 from keras.models import load_model      # for loading the CNN model
 
 
@@ -88,8 +87,8 @@ class Map_Emojies(Parameters):
                     cv2.putText(frame, 'No Faces', (30, 80),
                                 cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-            cv2.imshow('Emotion Detector', frame)
-            cv2.moveWindow('Emotion Detector', 350, 200)
+            cv2.imshow('Emotion Detector', cv2.resize(frame,(350,300)))
+            cv2.moveWindow('Emotion Detector', 400, 300)
 
             # break the loop if 'q' is pressed
             if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -107,10 +106,10 @@ class Map_Emojies(Parameters):
         for data in self.predeict_emotions():                          # call the predict_emotion function
 
             # read the image for the predicted emotion label
-            image = cv2.resize(cv2.imread(self.emoji_dist[data]), (200, 200))
+            image = cv2.resize(cv2.imread(self.emoji_dist[data]), (300, 300))
 
-            cv2.imshow('img', image)
-            cv2.moveWindow('img', 1000, 200)
+            cv2.imshow('Photo to emoji', image)
+            cv2.moveWindow('Photo to emoji', 800, 300)
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
 
@@ -123,10 +122,11 @@ class GUI_Application:
 
         # creating a tkinter window to run the application
         self.root = tk.Tk()
-        self.root.geometry('400x200+300+50')
-        self.root.eval('tk::PlaceWindow . center')
-        tk.Label(self.root, text='Photo to Emoji',
-                 font=('Times New Roman', 40)).pack()
+        self.root.title('Emojify - Create your own Emoji - By TechVidvan')
+        self.root['bg'] = 'black'
+        self.root.geometry('900x600+300+50')
+        tk.Label(self.root, text='Photo to Emoji By TechVidvan',
+                 font=('Times New Roman', 40),fg='white',bg='black',pady=20).pack()
 
     def run_app(self):
 
