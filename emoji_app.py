@@ -125,7 +125,7 @@ class GUI_Application:
         self.root.title('Emojify - Create your own Emoji - By TechVidvan')
         self.root['bg'] = 'black'
         self.root.geometry('900x600+300+50')
-        tk.Label(self.root, text='Photo to Emoji By TechVidvan',
+        tk.Label(self.root, text='Photo to Emoji',
                  font=('Times New Roman', 40),fg='white',bg='black',pady=20).pack()
 
     def run_app(self):
