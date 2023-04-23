@@ -122,7 +122,7 @@ class GUI_Application:
 
         # creating a tkinter window to run the application
         self.root = tk.Tk()
-        self.root.title('Emojify - Create your own Emoji - By TechVidvan')
+        self.root.title('Emojify - Create your own Emoji')
         self.root['bg'] = 'black'
         self.root.geometry('900x600+300+50')
         tk.Label(self.root, text='Photo to Emoji',
